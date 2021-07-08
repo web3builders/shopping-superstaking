@@ -1,5 +1,5 @@
 // Admin address (to see Admin panel)
-var adminAddress = "0xc0fFeE2E68C1C3ffd4e4E519E8Cd2a8eA244b2a8"
+var adminAddress = "0x8D65Df3f0f5FaB4A997713FAa905Fa906ACE4c82"
 
 // Ethereum mainNet staking contract
 // https://etherscan.io/address/0xc15122898c3eE73211d8a8a4a656Ba1980D53086#code
