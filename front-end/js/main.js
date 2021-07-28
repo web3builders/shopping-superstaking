@@ -2,15 +2,15 @@
 var adminAddress = "0x8D65Df3f0f5FaB4A997713FAa905Fa906ACE4c82"
 
 // Ethereum mainNet staking contract
-// https://etherscan.io/address/0xc15122898c3eE73211d8a8a4a656Ba1980D53086#code
-var stakingContract = "0xc15122898c3eE73211d8a8a4a656Ba1980D53086"
+// https://etherscan.io/address/0xfF28be45238778Db4082645A4665f3e6FbEbec25#code
+var stakingContract = "0xfF28be45238778Db4082645A4665f3e6FbEbec25"
 
 // Ethereum mainNet $SPI token contract
 var SPIContract = "0x9b02dd390a603add5c07f9fd9175b7dabe8d63b7"
 
 // Binance Smart Chain staking contract
-// https://bscscan.com/address/0x6ba4D3AA35401C30Bbe87f59b804c1ac3D24D55E#code
-var stakingContractOnBinanceChain = "0x6ba4D3AA35401C30Bbe87f59b804c1ac3D24D55E"
+// https://bscscan.com/address/0xb5C8fa958Cd4E0b9f465269459Eb28fd3fc21D2b#code
+var stakingContractOnBinanceChain = "0xb5C8fa958Cd4E0b9f465269459Eb28fd3fc21D2b"
 
 // Binance Smart Chain $GSPI contract
 var GSPIContract = "0xB42e1c3902b85b410334f5fff79cDc51fBeE6950"
