@@ -114,16 +114,24 @@ $(document).ready(function() {
     })
 
     $(".deposit").on("click", "#depositToken", function() {
-        let value = parseFloat($("#depositInput").val())
-        if (value > 0) {
-            if (User.stakeAll) {
-                stake(User.b_inwei, Contract.ref)
-                click.play()
-                return;
-            }
-            if (value <= parseFloat(User.balance)) {
-                stake(web3.utils.toWei(value.toString()), Contract.ref)
-                click.play()
+        if(User.allowed) {
+            let value = parseFloat($("#depositInput").val())
+            if (value > 0) {
+                if (User.stakeAll) {
+                    stake(User.b_inwei, Contract.ref)
+                    click.play()
+                    return;
+                }
+                if (value <= parseFloat(User.balance)) {
+                    stake(web3.utils.toWei(value.toString()), Contract.ref)
+                    click.play()
+                } else {
+                    $(".deposit").addClass("shake")
+                    setTimeout(function() {
+                        $(".deposit").removeClass("shake")
+                    }, 300)
+                    error.play()
+                }
             } else {
                 $(".deposit").addClass("shake")
                 setTimeout(function() {
@@ -132,11 +140,7 @@ $(document).ready(function() {
                 error.play()
             }
         } else {
-            $(".deposit").addClass("shake")
-            setTimeout(function() {
-                $(".deposit").removeClass("shake")
-            }, 300)
-            error.play()
+            $(".enabletoken").css("display", "flex")
         }
     })
 
@@ -344,8 +348,8 @@ async function fetchTokenData() {
                     "display": "flex",
                     "flex-direction": "column"
                 })
-                $(".deposit, .unstake, .extended, .activestakes").addClass("disabled")
-                $(".enabletoken").css("display", "flex")
+                //$(".deposit, .unstake, .extended, .activestakes").addClass("disabled")
+                //$(".enabletoken").css("display", "flex")
             }
         })
         await Token.methods.balanceOf(User.address).call().then(function(r) {
